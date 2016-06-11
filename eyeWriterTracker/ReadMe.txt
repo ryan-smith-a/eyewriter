@@ -18,7 +18,6 @@ http://www.openframeworks.cc/
 http://www.eyewriter.org/
 
 To compile the code, the following openFrameworks addons are needed:
-- ofxDirList
 - ofxXmlSettings
 
 Note:
