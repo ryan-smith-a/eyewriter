@@ -31,7 +31,7 @@ class renderManager{
 			for(int i = groups.size(); --i >= 0; ){
 				for (int s = 0; s < groups[i].strokes.size(); s++){
 					for (int p = 0; p < groups[i].strokes[s].pts.size() - 1; p++){
-						ofxVec2f dir = groups[i].strokes[s].pts[p+1] - groups[i].strokes[s].pts[p];
+						ofVec2f dir = groups[i].strokes[s].pts[p+1] - groups[i].strokes[s].pts[p];
 						float l = dir.lengthSquared();
 						float step = 100.0/l;
 						
@@ -69,8 +69,8 @@ class renderManager{
 				ofSetColor(groups[i].style.shadowColor[0], groups[i].style.shadowColor[1], groups[i].style.shadowColor[2]);
 				for(int p = 0; p < groups[i].strokes[s].pts.size()-1; p++){
 					//ofLine(groups[i].strokes[i].pts[k].x, groups[i].strokes[i].pts[k].y,groups[i].strokes[i].pts[k].x-50, groups[i].strokes[i].pts[k].y);
-					ofxVec2f dir = groups[i].strokes[s].pts[p+1] - groups[i].strokes[s].pts[p];
-					float dot = ofxVec2f(-1,0).dot(dir);
+					ofVec2f dir = groups[i].strokes[s].pts[p+1] - groups[i].strokes[s].pts[p];
+					float dot = ofVec2f(-1,0).dot(dir);
 					if (i == 1) dot*=-1;
 					(dot < 0) ? glColor3f(.5,.5,0) : glColor3f(1,1,0);
 					ofFill();

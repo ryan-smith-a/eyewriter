@@ -59,7 +59,7 @@ class renderManager{
 				for (int s = 0; s < curGroup.strokes.size(); s++){
 					stroke& curStroke = curGroup.strokes[s];
 					for (int p = 0; p < curStroke.pts.size() - 1; p++){
-						ofxVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
+						ofVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
 						float l = dir.lengthSquared();
 						float step = 60.0/l + .001*curStyle.outline;
 						
@@ -132,8 +132,8 @@ class renderManager{
 				ofSetColor(curStyle.colors["shadowColor"]);
 				for(int p = 0; p < curStroke.pts.size()-1; p++){
 					//ofLine(curGroup.strokes[i].pts[k].x, curGroup.strokes[i].pts[k].y,curGroup.strokes[i].pts[k].x-50, curGroup.strokes[i].pts[k].y);
-					ofxVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
-					float dot = ofxVec2f(-1,0).dot(dir);
+					ofVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
+					float dot = ofVec2f(-1,0).dot(dir);
 					if (i == 1) dot*=-1;
 					(curStyle.dotShadow) ? ((dot < 0) ? ofSetColor(((curStyle.colors["shadowColor"] >> 16) & 0xff)*.4,
 																		  ((curStyle.colors["shadowColor"] >> 8) & 0xff)*.4,
@@ -152,7 +152,7 @@ class renderManager{
 					ofEnableAlphaBlending();
 					//// DROP SHADOW HIGHLIGHTS ////////////////////////////////////
 					for (int p = 0; p < curStroke.pts.size() - 1; p++){
-						ofxVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
+						ofVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
 						float l = dir.lengthSquared();
 						float step = .1;
 						
@@ -287,7 +287,7 @@ class renderManager{
 							dot.getTextureReference().bind();
 							for (int s = 0; s < groups[i].strokes.size(); s++){
 								for (int p = 0; p < curStroke.pts.size() - 1; p++){
-									ofxVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
+									ofVec2f dir = curStroke.pts[p+1] - curStroke.pts[p];
 									float l = dir.lengthSquared();
 									float step = 60.0/l;
 									
