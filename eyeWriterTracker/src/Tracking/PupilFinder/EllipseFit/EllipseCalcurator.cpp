@@ -132,7 +132,7 @@ bool ellipseCalcurator::update(ofxCvBlob & blob){
 
 		int resolution = 24;
 
-		ofxPoint2f ptsForRotation[resolution];
+		ofVec2f ptsForRotation[resolution];
 
 		for (int i=0; i<resolution; i++){
 			float t = TWO_PI * (float)i/(float)resolution;
@@ -142,7 +142,7 @@ bool ellipseCalcurator::update(ofxCvBlob & blob){
 		}
 
 		for (int i=0; i<resolution; i++){
-			ptsForRotation[i].rotate(theta * RAD_TO_DEG, ofxPoint2f(cx, cy));
+			ptsForRotation[i].rotate(theta * RAD_TO_DEG, ofVec2f(cx, cy));
 		}
 
 		currentEyePoint.set(cx, cy);
