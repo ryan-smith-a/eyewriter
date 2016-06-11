@@ -19,7 +19,6 @@ http://www.eyewriter.org/
 
 To compile the code, the following openFrameworks addons are needed:
 - ofxDirList
-- ofxVectorMath
 - ofxXmlSettings
 
 Note:

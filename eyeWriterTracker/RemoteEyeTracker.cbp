@@ -65,7 +65,6 @@
 			<Add directory="..\..\..\addons\ofxOsc\src" />
 			<Add directory="..\..\..\addons\ofxOsc\libs\oscpack\include\ip" />
 			<Add directory="..\..\..\addons\ofxOsc\libs\oscpack\include\osc" />
-			<Add directory="..\..\..\addons\ofxVectorMath\src" />
 			<Add directory="..\..\..\addons\ofxVectorGraphics\src" />
 			<Add directory="..\..\..\addons\ofxVectorGraphics\libs" />
 			<Add directory="src\addons\ofxOpenCv\src" />
