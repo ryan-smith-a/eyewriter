@@ -79,7 +79,7 @@ class saverScene : public baseScene{
 		buttonTrigger saveAndUpload;
 		
 		int whichState;
-		ofFileUtils dirList;
+		ofDirectory dirList;
 		
 		int whichGroup;
 		bool showAll;

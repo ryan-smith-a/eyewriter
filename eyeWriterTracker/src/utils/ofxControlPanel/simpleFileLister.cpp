@@ -22,13 +22,13 @@ int simpleFileLister::listDir(string directory){
 	bRevSort        = false;
 	entries.clear();
 
-	ofFileUtils::reset();
-	int numFiles = ofFileUtils::listDir(directory);
+	ofDirectory::reset();
+	int numFiles = ofDirectory::listDir(directory);
 	entries.assign(numFiles, entry());
 
 	for(int i = 0; i < numFiles; i++){
-		entries[i].filename = ofFileUtils::getName(i);
-		entries[i].fullpath = ofFileUtils::getPath(i);
+		entries[i].filename = ofDirectory::getName(i);
+		entries[i].fullpath = ofDirectory::getPath(i);
 	}
 
 	lastDirectory = directory;
