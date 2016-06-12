@@ -62,7 +62,7 @@ class testApp : public ofBaseApp {
 		//------ drawing
 		void drawHelp();
 	
-		static const float rotSmooth = .9;
+		static constexpr float rotSmooth = .9;
 
 	
 };
