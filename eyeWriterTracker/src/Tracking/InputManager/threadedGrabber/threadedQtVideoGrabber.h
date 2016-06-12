@@ -9,7 +9,7 @@ class threadedQtVideoGrabber : public ofVideoGrabber, public ofThread {
 protected:
 	int pollRate;
 	void threadedFunction() {
-		while(threadRunning) {
+		while(isThreadRunning()) {
 			lock();
 			update();						// we don't need lock here only if getThreadedPixels is called from "frameReceived"
 			unlock();
@@ -45,7 +45,7 @@ public:
 	}
 	void getThreadedPixels(ofxCvColorImage & colorImg, bool & bNeedUpdate) {
 		lock();
-		colorImg.setFromPixels(this->getPixels(), width, height);
+		colorImg.setFromPixels(this->getPixels(), getWidth(), getHeight());
 		bNeedUpdate = true;
 		unlock();
 	}
