@@ -41,7 +41,7 @@ public:
 	}
 	template <class L>
 	void addListener(L* listener) {
-		ofAddListener(frameReceived, listener, &(L::frameReceived));
+		ofAddListener(frameReceived, listener, &L::frameReceived);
 	}
 	void getThreadedPixels(ofxCvColorImage & colorImg, bool & bNeedUpdate) {
 		lock();
